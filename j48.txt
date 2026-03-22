@@ -1,0 +1,863 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     weka_ready
+Instances:    3967
+Attributes:   35
+              Marital_status
+              Application_mode
+              Application_order
+              Course
+              Daytime_evening_attendance
+              Previous_qualification
+              Nacionality
+              Mothers_qualification
+              Fathers_qualification
+              Mothers_occupation
+              Fathers_occupation
+              Displaced
+              Educational_special_needs
+              Debtor
+              Tuition_fees_up_to_date
+              Gender
+              Scholarship_holder
+              Age_at_enrollment
+              International
+              Curricular_units_1st_sem_credited
+              Curricular_units_1st_sem_enrolled
+              Curricular_units_1st_sem_evaluations
+              Curricular_units_1st_sem_approved
+              Curricular_units_1st_sem_grade
+              Curricular_units_1st_sem_without_evaluations
+              Curricular_units_2nd_sem_credited
+              Curricular_units_2nd_sem_enrolled
+              Curricular_units_2nd_sem_evaluations
+              Curricular_units_2nd_sem_approved
+              Curricular_units_2nd_sem_grade
+              Curricular_units_2nd_sem_without_evaluations
+              Unemployment_rate
+              Inflation_rate
+              GDP
+              Target
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Curricular_units_2nd_sem_approved <= 0.15
+|   Course <= 2
+|   |   Age_at_enrollment <= 0.150943
+|   |   |   Debtor <= 0
+|   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   Daytime_evening_attendance <= 0: Graduate (3.0)
+|   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   Previous_qualification <= 2
+|   |   |   |   |   |   |   |   Application_mode <= 3: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   Application_mode > 3
+|   |   |   |   |   |   |   |   |   Fathers_qualification <= 21: Graduate (5.0/1.0)
+|   |   |   |   |   |   |   |   |   Fathers_qualification > 21: Dropout (6.0/1.0)
+|   |   |   |   |   |   |   Previous_qualification > 2: Dropout (2.0)
+|   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Dropout (2.0)
+|   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.121212
+|   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0
+|   |   |   |   |   |   |   Unemployment_rate <= 0.732558
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   Nacionality <= 7
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.076923
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification <= 1: Enrolled (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification > 1: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced <= 0: Dropout (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 4: Graduate (14.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 4: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1: Graduate (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order > 2: Dropout (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 15: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 15: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.076923: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   Nacionality > 7: Dropout (2.0)
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited > 0: Graduate (7.0/1.0)
+|   |   |   |   |   |   |   Unemployment_rate > 0.732558: Enrolled (5.0/2.0)
+|   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0: Graduate (8.0/1.0)
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.121212
+|   |   |   |   |   |   Application_mode <= 4: Graduate (8.0/1.0)
+|   |   |   |   |   |   Application_mode > 4: Enrolled (2.0)
+|   |   |   Debtor > 0
+|   |   |   |   GDP <= 0.311757: Graduate (3.0/1.0)
+|   |   |   |   GDP > 0.311757: Dropout (9.0)
+|   |   Age_at_enrollment > 0.150943: Dropout (11.0)
+|   Course > 2
+|   |   Curricular_units_2nd_sem_approved <= 0.05
+|   |   |   Curricular_units_2nd_sem_approved <= 0
+|   |   |   |   Mothers_occupation <= 17: Dropout (555.0/34.0)
+|   |   |   |   Mothers_occupation > 17: Enrolled (4.0/1.0)
+|   |   |   Curricular_units_2nd_sem_approved > 0
+|   |   |   |   Tuition_fees_up_to_date <= 0: Dropout (23.0)
+|   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   GDP <= 0.80317
+|   |   |   |   |   |   Mothers_occupation <= 5
+|   |   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   Inflation_rate <= 0.311111: Dropout (6.0/1.0)
+|   |   |   |   |   |   |   |   |   Inflation_rate > 0.311111
+|   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 3: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Mothers_occupation > 3: Enrolled (6.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Dropout (3.0)
+|   |   |   |   |   |   |   Curricular_units_1st_sem_credited > 0: Enrolled (4.0)
+|   |   |   |   |   |   Mothers_occupation > 5
+|   |   |   |   |   |   |   Inflation_rate <= 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   Inflation_rate > 0: Dropout (38.0/3.0)
+|   |   |   |   |   GDP > 0.80317: Enrolled (3.0)
+|   |   Curricular_units_2nd_sem_approved > 0.05
+|   |   |   Curricular_units_1st_sem_approved <= 0.192308
+|   |   |   |   Mothers_occupation <= 1: Dropout (13.0/1.0)
+|   |   |   |   Mothers_occupation > 1
+|   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0.083333
+|   |   |   |   |   |   |   Age_at_enrollment <= 0.132075
+|   |   |   |   |   |   |   |   Course <= 14
+|   |   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   |   Course <= 8: Enrolled (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Course > 8
+|   |   |   |   |   |   |   |   |   |   |   Application_mode <= 7
+|   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.488889: Dropout (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.488889: Enrolled (7.0)
+|   |   |   |   |   |   |   |   |   |   |   Application_mode > 7: Dropout (9.0/1.0)
+|   |   |   |   |   |   |   |   |   Debtor > 0
+|   |   |   |   |   |   |   |   |   |   Nacionality <= 2
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.551923: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.551923
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.1: Dropout (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 7: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 7: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   Nacionality > 2: Dropout (2.0)
+|   |   |   |   |   |   |   |   Course > 14: Dropout (10.0)
+|   |   |   |   |   |   |   Age_at_enrollment > 0.132075: Dropout (31.0/1.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0.083333
+|   |   |   |   |   |   |   Application_mode <= 9: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   Application_mode > 9: Dropout (3.0)
+|   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   Fathers_occupation <= 18
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled <= 0.271336
+|   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.119979
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.133333: Enrolled (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.133333
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.18089
+|   |   |   |   |   |   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.538462: Dropout (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.538462
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 17
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 7: Enrolled (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.075472: Dropout (16.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.075472: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.680556: Dropout (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.680556: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 17: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Debtor > 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.18089: Enrolled (14.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Marital_status <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.153846
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 15
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 5: Enrolled (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 11: Graduate (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 11: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.184737: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.184737: Graduate (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 15
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.591154: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.591154: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Debtor > 0: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.153846
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.562393: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.562393: Dropout (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.075472: Enrolled (16.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.075472: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.619231: Dropout (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.619231: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Debtor > 0: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Marital_status > 1: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Dropout (6.0/1.0)
+|   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.119979
+|   |   |   |   |   |   |   |   |   |   Educational_special_needs <= 0
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.155556: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.155556: Dropout (16.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.59127: Enrolled (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.59127
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.212121: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.212121: Dropout (15.0/2.0)
+|   |   |   |   |   |   |   |   |   |   Educational_special_needs > 0: Dropout (2.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled > 0.271336: Dropout (12.0/1.0)
+|   |   |   |   |   |   |   Fathers_occupation > 18: Enrolled (8.0)
+|   |   |   |   |   |   Scholarship_holder > 0
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.1: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.1
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.153846
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.646154
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 20: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 20: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.646154
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 2: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order > 2: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.153846: Graduate (6.0/1.0)
+|   |   |   |   |   |   |   |   Debtor > 0: Enrolled (2.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Enrolled (3.0)
+|   |   |   Curricular_units_1st_sem_approved > 0.192308
+|   |   |   |   International <= 0
+|   |   |   |   |   Marital_status <= 1
+|   |   |   |   |   |   Daytime_evening_attendance <= 0: Dropout (4.0/1.0)
+|   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   Debtor <= 0
+|   |   |   |   |   |   |   |   |   Previous_qualification <= 7
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.1: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.1
+|   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.037736: Graduate (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.037736: Enrolled (6.0)
+|   |   |   |   |   |   |   |   |   Previous_qualification > 7
+|   |   |   |   |   |   |   |   |   |   Course <= 7: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   Course > 7: Dropout (2.0)
+|   |   |   |   |   |   |   |   Debtor > 0: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   Scholarship_holder > 0
+|   |   |   |   |   |   |   |   Fathers_occupation <= 8: Graduate (3.0)
+|   |   |   |   |   |   |   |   Fathers_occupation > 8: Dropout (5.0/1.0)
+|   |   |   |   |   Marital_status > 1: Graduate (2.0)
+|   |   |   |   International > 0: Dropout (3.0)
+Curricular_units_2nd_sem_approved > 0.15
+|   Curricular_units_1st_sem_grade <= 0.555556
+|   |   Scholarship_holder <= 0
+|   |   |   Curricular_units_2nd_sem_grade <= 0.659615
+|   |   |   |   Course <= 2
+|   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.088889
+|   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   Application_order <= 2: Dropout (10.0/2.0)
+|   |   |   |   |   |   |   Application_order > 2: Graduate (2.0)
+|   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Enrolled (2.0)
+|   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.088889: Graduate (2.0)
+|   |   |   |   Course > 2
+|   |   |   |   |   Curricular_units_2nd_sem_credited <= 0: Dropout (55.0/1.0)
+|   |   |   |   |   Curricular_units_2nd_sem_credited > 0
+|   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.192308: Dropout (6.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.192308: Enrolled (2.0)
+|   |   |   Curricular_units_2nd_sem_grade > 0.659615
+|   |   |   |   Course <= 8: Graduate (2.0)
+|   |   |   |   Course > 8: Enrolled (2.0)
+|   |   Scholarship_holder > 0
+|   |   |   Curricular_units_2nd_sem_without_evaluations <= 0: Enrolled (6.0/1.0)
+|   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Graduate (2.0)
+|   Curricular_units_1st_sem_grade > 0.555556
+|   |   Curricular_units_1st_sem_approved <= 0.153846
+|   |   |   Curricular_units_2nd_sem_enrolled <= 0.271336
+|   |   |   |   Debtor <= 0
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.151515
+|   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.090909: Dropout (3.0)
+|   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.090909
+|   |   |   |   |   |   |   Application_order <= 2
+|   |   |   |   |   |   |   |   Displaced <= 0: Graduate (11.0/1.0)
+|   |   |   |   |   |   |   |   Displaced > 0
+|   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.209302: Dropout (8.0/2.0)
+|   |   |   |   |   |   |   |   |   Unemployment_rate > 0.209302: Graduate (8.0)
+|   |   |   |   |   |   |   Application_order > 2
+|   |   |   |   |   |   |   |   Inflation_rate <= 0.488889: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   Inflation_rate > 0.488889: Graduate (2.0)
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.151515
+|   |   |   |   |   |   Course <= 15
+|   |   |   |   |   |   |   Application_mode <= 13
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.115385
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823
+|   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.169811
+|   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 3: Graduate (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 3
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0: Enrolled (21.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1: Dropout (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 8: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 8: Enrolled (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 17: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 17: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.169811
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.673077: Dropout (8.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.673077: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823
+|   |   |   |   |   |   |   |   |   |   Course <= 12
+|   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 22
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.619231: Enrolled (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.619231
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.111111: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.111111: Graduate (8.0)
+|   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 22: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   Course > 12: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.115385
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0.012079
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.266667
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0.010942
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.272727
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP <= 0.766182
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0: Graduate (19.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP > 0.766182: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.272727: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.241972
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.037736: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.037736: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.734568
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.119979
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.30303: Graduate (10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.30303: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder <= 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder > 0: Graduate (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.119979: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 3: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.242424: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.242424: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced > 0: Dropout (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.734568: Graduate (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.241972: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP <= 0.53624: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP > 0.53624: Graduate (7.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0.010942
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.6875: Graduate (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.6875: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.266667
+|   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 12
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.2: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.2: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 12
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 6: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 6: Dropout (8.0/1.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0.012079
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.212121: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.212121: Graduate (9.0)
+|   |   |   |   |   |   |   Application_mode > 13
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0.012079
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0: Enrolled (14.0/1.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 8: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   Fathers_qualification > 8: Dropout (3.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0.012079: Graduate (3.0/1.0)
+|   |   |   |   |   |   Course > 15
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.30303
+|   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   Displaced <= 0: Enrolled (24.0/2.0)
+|   |   |   |   |   |   |   |   |   Displaced > 0
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.115385: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.115385: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.358491: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.358491: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Dropout (5.0/1.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.30303: Dropout (2.0)
+|   |   |   |   Debtor > 0
+|   |   |   |   |   International <= 0
+|   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.230769
+|   |   |   |   |   |   |   Daytime_evening_attendance <= 0
+|   |   |   |   |   |   |   |   Age_at_enrollment <= 0.188679: Graduate (4.0/2.0)
+|   |   |   |   |   |   |   |   Age_at_enrollment > 0.188679: Dropout (2.0)
+|   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0: Dropout (16.0/1.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   Application_mode <= 10: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   Application_mode > 10: Dropout (2.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.230769: Enrolled (3.0/1.0)
+|   |   |   |   |   International > 0: Enrolled (3.0/1.0)
+|   |   |   Curricular_units_2nd_sem_enrolled > 0.271336
+|   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   Application_order <= 1
+|   |   |   |   |   |   Mothers_qualification <= 2: Dropout (7.0)
+|   |   |   |   |   |   Mothers_qualification > 2
+|   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled <= 0.347826: Enrolled (8.0/1.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled > 0.347826: Dropout (2.0)
+|   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0: Dropout (4.0)
+|   |   |   |   |   Application_order > 1: Dropout (3.0)
+|   |   |   |   Scholarship_holder > 0: Dropout (3.0/2.0)
+|   |   Curricular_units_1st_sem_approved > 0.153846
+|   |   |   Debtor <= 0
+|   |   |   |   Course <= 15
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.272727
+|   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0.25
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.25
+|   |   |   |   |   |   |   |   Previous_qualification <= 13
+|   |   |   |   |   |   |   |   |   Application_mode <= 10
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.2
+|   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0: Enrolled (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled <= 0.271336
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.755556
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.18089
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0: Enrolled (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited > 0: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.18089
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 6
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 4: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 4: Graduate (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 6: Graduate (15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 3: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced > 0: Graduate (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.755556: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_enrolled > 0.271336: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.2
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.230769
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.230769
+|   |   |   |   |   |   |   |   |   |   |   |   |   Nacionality <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 15
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 3: Graduate (11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 3: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 15: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.181818
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 2: Graduate (54.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.716049: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.716049: Graduate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.181818
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.222222
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.719231: Graduate (81.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.719231
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823: Graduate (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 4: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 2: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 2: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 11: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 7: Enrolled (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.222222
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 27: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 27: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 8: Graduate (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.056604: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.056604: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 3: Graduate (25.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Graduate (35.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Nacionality > 2: Graduate (10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.230769
+|   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0: Graduate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.155556: Graduate (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.155556
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.241972
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.177778: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.177778: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.241972: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 4: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder > 0: Graduate (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 12: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.230769: Graduate (32.0/2.0)
+|   |   |   |   |   |   |   |   |   Application_mode > 10
+|   |   |   |   |   |   |   |   |   |   Nacionality <= 2
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   Marital_status <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.192308: Graduate (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.732558
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.18089: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.18089
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823: Graduate (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.406977: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.406977: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.449027: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.449027
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.732558
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.714444: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.714444: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 13: Graduate (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 13: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Marital_status > 4: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.809259: Enrolled (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.809259: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   Nacionality > 2: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   Previous_qualification > 13: Graduate (18.0/1.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.25
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.184737: Graduate (844.0/71.0)
+|   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.184737
+|   |   |   |   |   |   |   |   |   Course <= 10: Graduate (76.0/4.0)
+|   |   |   |   |   |   |   |   |   Course > 10
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.230769
+|   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 10
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0.010942
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.244444
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.241972: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.241972: Graduate (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.244444
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP <= 0.772787: Enrolled (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP > 0.772787: Graduate (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 20
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1: Graduate (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1: Enrolled (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 20: Graduate (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0.010942: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 10: Enrolled (7.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.230769: Graduate (28.0/2.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_credited > 0.25
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.242424: Dropout (9.0/1.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.242424
+|   |   |   |   |   |   |   |   Unemployment_rate <= 0.593023
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.25: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.25: Graduate (13.0/1.0)
+|   |   |   |   |   |   |   |   Unemployment_rate > 0.593023: Enrolled (2.0)
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.272727
+|   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.346154
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0.012079
+|   |   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations <= 0.155556
+|   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order <= 1: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Application_order > 1: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823: Graduate (19.0)
+|   |   |   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.636752: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.636752
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 7: Dropout (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 7: Graduate (5.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_evaluations > 0.155556
+|   |   |   |   |   |   |   |   |   |   Marital_status <= 1
+|   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 2: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 2: Graduate (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 2
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.45
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.35
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.241972
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.037736: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.037736: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.2: Graduate (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.241972: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP <= 0.80317
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.119979
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.659231: Graduate (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.659231
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 20
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 4: Graduate (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 4: Enrolled (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 20: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_without_evaluations > 0: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0: Enrolled (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0: Graduate (33.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.119979
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.692857: Enrolled (10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.692857: Graduate (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP > 0.80317
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.056604: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.056604: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 11: Graduate (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 11: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.192308: Enrolled (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.192308: Graduate (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_credited > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.25: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.25: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 1: Graduate (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823: Enrolled (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.25: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.678462
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation <= 10: Enrolled (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_occupation > 10: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.678462
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced <= 0: Graduate (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Displaced > 0: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.35
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification <= 7: Graduate (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification > 7: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.45
+|   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 17: Dropout (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 17: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   Marital_status > 1
+|   |   |   |   |   |   |   |   |   |   |   Course <= 3: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Course > 3
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate <= 0.8
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course <= 6: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Course > 6: Dropout (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP <= 0.640687: Graduate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   GDP > 0.640687: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Inflation_rate > 0.8: Dropout (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 8: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 8: Enrolled (4.0/1.0)
+|   |   |   |   |   |   |   |   Scholarship_holder > 0
+|   |   |   |   |   |   |   |   |   Fathers_occupation <= 6
+|   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   Course <= 12: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Course > 12: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.192308
+|   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.406977
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 7: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 7: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.406977: Graduate (7.0)
+|   |   |   |   |   |   |   |   |   |   Gender > 0: Enrolled (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Fathers_occupation > 6: Graduate (56.0/5.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0.012079
+|   |   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   |   Mothers_occupation <= 4
+|   |   |   |   |   |   |   |   |   |   Application_order <= 1: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   Application_order > 1: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   Mothers_occupation > 4
+|   |   |   |   |   |   |   |   |   |   Course <= 7: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   Course > 7: Dropout (11.0/2.0)
+|   |   |   |   |   |   |   |   Scholarship_holder > 0: Graduate (3.0/1.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.346154
+|   |   |   |   |   |   |   Age_at_enrollment <= 0.660377: Graduate (96.0/12.0)
+|   |   |   |   |   |   |   Age_at_enrollment > 0.660377
+|   |   |   |   |   |   |   |   Fathers_occupation <= 10: Dropout (4.0/1.0)
+|   |   |   |   |   |   |   |   Fathers_occupation > 10: Enrolled (2.0)
+|   |   |   |   Course > 15
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.454545
+|   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.222823
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.739161
+|   |   |   |   |   |   |   |   Displaced <= 0
+|   |   |   |   |   |   |   |   |   Mothers_occupation <= 4: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   Mothers_occupation > 4
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.2
+|   |   |   |   |   |   |   |   |   |   |   Fathers_qualification <= 20: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Fathers_qualification > 20: Dropout (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.2: Dropout (6.0)
+|   |   |   |   |   |   |   |   Displaced > 0
+|   |   |   |   |   |   |   |   |   Mothers_qualification <= 16: Enrolled (8.0)
+|   |   |   |   |   |   |   |   |   Mothers_qualification > 16
+|   |   |   |   |   |   |   |   |   |   Application_mode <= 3: Graduate (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Application_mode > 3: Dropout (2.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.739161: Graduate (6.0)
+|   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.222823
+|   |   |   |   |   |   |   Fathers_qualification <= 7
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.818462
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.3
+|   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.209302: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.209302: Enrolled (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.3: Graduate (2.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.818462: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0: Dropout (2.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0: Graduate (2.0)
+|   |   |   |   |   |   |   Fathers_qualification > 7
+|   |   |   |   |   |   |   |   Mothers_qualification <= 12
+|   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0: Graduate (12.0)
+|   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved <= 0.192308: Enrolled (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_approved > 0.192308: Graduate (4.0)
+|   |   |   |   |   |   |   |   Mothers_qualification > 12
+|   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   |   |   |   |   Application_mode <= 13: Graduate (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Application_mode > 13: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations <= 0
+|   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.918605
+|   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0: Graduate (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode <= 2: Dropout (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification <= 17: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Mothers_qualification > 17: Dropout (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Gender > 0: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Application_mode > 8: Graduate (24.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Scholarship_holder > 0: Graduate (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.918605: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_without_evaluations > 0
+|   |   |   |   |   |   |   |   |   |   |   Mothers_occupation <= 6: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Mothers_occupation > 6: Graduate (14.0/1.0)
+|   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.454545
+|   |   |   |   |   |   Marital_status <= 1: Dropout (10.0/2.0)
+|   |   |   |   |   |   Marital_status > 1: Enrolled (3.0/1.0)
+|   |   |   Debtor > 0
+|   |   |   |   Scholarship_holder <= 0
+|   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.25
+|   |   |   |   |   |   Curricular_units_1st_sem_grade <= 0.611111
+|   |   |   |   |   |   |   GDP <= 0.311757: Dropout (5.0/1.0)
+|   |   |   |   |   |   |   GDP > 0.311757: Graduate (7.0/1.0)
+|   |   |   |   |   |   Curricular_units_1st_sem_grade > 0.611111
+|   |   |   |   |   |   |   Educational_special_needs <= 0
+|   |   |   |   |   |   |   |   Tuition_fees_up_to_date <= 0: Dropout (33.0/5.0)
+|   |   |   |   |   |   |   |   Tuition_fees_up_to_date > 0
+|   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled <= 0.192308: Graduate (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_1st_sem_enrolled > 0.192308
+|   |   |   |   |   |   |   |   |   |   Marital_status <= 1
+|   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.018868: Dropout (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.018868
+|   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.169811: Enrolled (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.169811: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   Marital_status > 1: Dropout (2.0/1.0)
+|   |   |   |   |   |   |   Educational_special_needs > 0: Graduate (2.0/1.0)
+|   |   |   |   |   Curricular_units_2nd_sem_approved > 0.25
+|   |   |   |   |   |   Curricular_units_2nd_sem_evaluations <= 0.212121: Graduate (18.0/1.0)
+|   |   |   |   |   |   Curricular_units_2nd_sem_evaluations > 0.212121
+|   |   |   |   |   |   |   Application_order <= 1
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited <= 0.631579
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved <= 0.55
+|   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance <= 0
+|   |   |   |   |   |   |   |   |   |   |   Application_mode <= 15: Dropout (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Application_mode > 15: Enrolled (3.0)
+|   |   |   |   |   |   |   |   |   |   Daytime_evening_attendance > 0
+|   |   |   |   |   |   |   |   |   |   |   Unemployment_rate <= 0.406977
+|   |   |   |   |   |   |   |   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment <= 0.056604: Graduate (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Age_at_enrollment > 0.056604: Enrolled (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Gender > 0: Enrolled (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Unemployment_rate > 0.406977
+|   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification <= 8: Dropout (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Previous_qualification > 8: Enrolled (2.0)
+|   |   |   |   |   |   |   |   |   Curricular_units_2nd_sem_approved > 0.55: Dropout (2.0)
+|   |   |   |   |   |   |   |   Curricular_units_2nd_sem_credited > 0.631579: Graduate (3.0)
+|   |   |   |   |   |   |   Application_order > 1: Graduate (6.0/1.0)
+|   |   |   |   Scholarship_holder > 0
+|   |   |   |   |   Unemployment_rate <= 0: Dropout (2.0/1.0)
+|   |   |   |   |   Unemployment_rate > 0
+|   |   |   |   |   |   Tuition_fees_up_to_date <= 0
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_grade <= 0.683173: Dropout (5.0/1.0)
+|   |   |   |   |   |   |   Curricular_units_2nd_sem_grade > 0.683173: Graduate (4.0)
+|   |   |   |   |   |   Tuition_fees_up_to_date > 0: Graduate (26.0/1.0)
+
+Number of Leaves  : 	391
+
+Size of the tree : 	781
+
+
+Time taken to build model: 0.48 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2743               69.1454 %
+Incorrectly Classified Instances      1224               30.8546 %
+Kappa statistic                          0.491 
+Mean absolute error                      0.2284
+Root mean squared error                  0.4228
+Relative absolute error                 55.5748 %
+Root relative squared error             93.2598 %
+Total Number of Instances             3967     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.698    0.139    0.707      0.698    0.703      0.561    0.776     0.616     Dropout
+                 0.827    0.239    0.773      0.827    0.799      0.590    0.803     0.729     Graduate
+                 0.305    0.115    0.367      0.305    0.333      0.204    0.595     0.284     Enrolled
+Weighted Avg.    0.691    0.184    0.679      0.691    0.684      0.511    0.757     0.612     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  899  209  180 |    a = Dropout
+  145 1627  195 |    b = Graduate
+  227  268  217 |    c = Enrolled
+

@@ -1,0 +1,80 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     weka_ready
+Instances:    3967
+Attributes:   35
+              Marital_status
+              Application_mode
+              Application_order
+              Course
+              Daytime_evening_attendance
+              Previous_qualification
+              Nacionality
+              Mothers_qualification
+              Fathers_qualification
+              Mothers_occupation
+              Fathers_occupation
+              Displaced
+              Educational_special_needs
+              Debtor
+              Tuition_fees_up_to_date
+              Gender
+              Scholarship_holder
+              Age_at_enrollment
+              International
+              Curricular_units_1st_sem_credited
+              Curricular_units_1st_sem_enrolled
+              Curricular_units_1st_sem_evaluations
+              Curricular_units_1st_sem_approved
+              Curricular_units_1st_sem_grade
+              Curricular_units_1st_sem_without_evaluations
+              Curricular_units_2nd_sem_credited
+              Curricular_units_2nd_sem_enrolled
+              Curricular_units_2nd_sem_evaluations
+              Curricular_units_2nd_sem_approved
+              Curricular_units_2nd_sem_grade
+              Curricular_units_2nd_sem_without_evaluations
+              Unemployment_rate
+              Inflation_rate
+              GDP
+              Target
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.95 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2961               74.6408 %
+Incorrectly Classified Instances      1006               25.3592 %
+Kappa statistic                          0.5661
+Mean absolute error                      0.2467
+Root mean squared error                  0.3406
+Relative absolute error                 60.0154 %
+Root relative squared error             75.1405 %
+Total Number of Instances             3967     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.747    0.096    0.789      0.747    0.767      0.660    0.906     0.855     Dropout
+                 0.924    0.292    0.757      0.924    0.832      0.646    0.911     0.880     Graduate
+                 0.256    0.050    0.526      0.256    0.344      0.279    0.791     0.449     Enrolled
+Weighted Avg.    0.746    0.185    0.726      0.746    0.723      0.585    0.888     0.794     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  962  237   89 |    a = Dropout
+   75 1817   75 |    b = Graduate
+  183  347  182 |    c = Enrolled
+
